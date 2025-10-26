@@ -9,6 +9,11 @@ import racingcar.model.car.CarList;
 import java.util.List;
 
 public class Race {
+
+    private static final int WIN_THRESHOLD = 4;
+    private static final int MIN_RANGE = 0;
+    private static final int MAX_RANGE = 9;
+
     private final CarList carList;
     private final int gameCount;
 
@@ -39,8 +44,8 @@ public class Race {
     private GameResultDto.RoundResult playRound() {
         List<Car> cars = carList.getCars();
         for(Car car : cars) {
-            int randomNumber = Randoms.pickNumberInRange(0,9);
-            if(randomNumber >=4) car.moveForward();
+            int randomNumber = Randoms.pickNumberInRange(MIN_RANGE,MAX_RANGE);
+            if(randomNumber >= WIN_THRESHOLD) car.moveForward();
         }
         return new GameResultDto.RoundResult(cars);
     }
