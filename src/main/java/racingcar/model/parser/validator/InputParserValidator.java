@@ -1,4 +1,4 @@
-package racingcar.validator;
+package racingcar.model.parser.validator;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
-package racingcar.model;
+package racingcar.model.parser;
 
 import racingcar.dto.GameInitDto;
-import racingcar.validator.InputParserValidator;
+import racingcar.model.parser.validator.InputParserValidator;
 
 import java.util.Arrays;
 import java.util.List;

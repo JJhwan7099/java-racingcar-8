@@ -2,7 +2,7 @@ package racingcar.controller;
 
 import racingcar.dto.GameInitDto;
 import racingcar.dto.GameResultDto;
-import racingcar.model.InputParser;
+import racingcar.model.parser.InputParser;
 import racingcar.model.Race;
 import racingcar.model.car.CarList;
 import racingcar.view.InputView;
