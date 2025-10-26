@@ -1,9 +1,8 @@
 package racingcar.view;
 
-import racingcar.model.car.Car;
+import racingcar.dto.GameResultDto;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class OutputView {
     public void printRequestCarNames() {
@@ -14,25 +13,28 @@ public class OutputView {
         System.out.println("시도할 횟수는 몇 회인가요?");
     }
 
-    public void printRacingResult() {
-        System.out.println("실행 결과");
-    }
+    public void printResult(GameResultDto gameResultDto) {
+        List<GameResultDto.RoundResult> roundResults = gameResultDto.getRoundResults();
+        List<String> winners = gameResultDto.getWinners();
 
-    public void printRoundStatus(List<Car> carList) {
-        for(Car car : carList) {
-            System.out.print(car.getName() + " : ");
-            for(int i = 0; i < car.getPosition(); i++) {
-                System.out.print("-");
+        System.out.println("실행 결과");
+
+        for(GameResultDto.RoundResult roundResult : roundResults) {
+            List<GameResultDto.CarNameAndPosition> carNameAndPositions = roundResult.getCarNameAndPositions();
+            for(GameResultDto.CarNameAndPosition carNameAndPosition : carNameAndPositions) {
+                String carName = carNameAndPosition.getName();
+                int position = carNameAndPosition.getPosition();
+
+                System.out.print(carName + " : ");
+                for(int i=0; i<position; i++) {
+                    System.out.print("-");
+                }
+                System.out.println();
             }
+
             System.out.println();
         }
-        System.out.println();
-    }
 
-    public void printWinners(List<Car> carList) {
-        String winners = carList.stream()
-                    .map(Car::getName)
-                    .collect(Collectors.joining(", "));
-        System.out.println("최종 우승자 : " + winners);
+        System.out.println("최종 우승자 : " + String.join(", ",winners));
     }
 }
