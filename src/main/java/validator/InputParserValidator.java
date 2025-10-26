@@ -8,8 +8,8 @@ public class InputParserValidator {
 
     public static void validateCarNames(List<String> cars) {
         for(String carName : cars) {
-            if(!carName.matches(ALPHABET_PATTERN) || carName.isBlank())
-                throw new IllegalArgumentException("자동차명은 빈값 혹은 공백이 될 수 없으며, 알파벳으로만 구성되어야 합니다.");
+            if(!carName.matches(ALPHABET_PATTERN) || carName.isBlank() || carName.length() > 5)
+                throw new IllegalArgumentException("자동차명은 빈값 혹은 공백이 될 수 없으며, 5글자 이하의 알파벳으로만 구성되어야 합니다.");
         }
     }
 
