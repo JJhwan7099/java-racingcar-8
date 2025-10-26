@@ -1,11 +1,11 @@
-package controller;
+package racingcar.controller;
 
-import dto.GameInitDto;
-import model.InputParser;
-import model.Race;
-import model.car.CarList;
-import view.InputView;
-import view.OutputView;
+import racingcar.dto.GameInitDto;
+import racingcar.model.InputParser;
+import racingcar.model.Race;
+import racingcar.model.car.CarList;
+import racingcar.view.InputView;
+import racingcar.view.OutputView;
 
 public class RacingCarController {
     private final InputView inputView;

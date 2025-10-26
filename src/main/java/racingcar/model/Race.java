@@ -1,10 +1,10 @@
-package model;
+package racingcar.model;
 
 import camp.nextstep.edu.missionutils.Randoms;
-import dto.GameInitDto;
-import model.car.Car;
-import model.car.CarList;
-import view.OutputView;
+import racingcar.dto.GameInitDto;
+import racingcar.model.car.Car;
+import racingcar.model.car.CarList;
+import racingcar.view.OutputView;
 
 import java.util.List;
 
