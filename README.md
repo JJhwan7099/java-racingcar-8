@@ -128,3 +128,26 @@ jun : -----
 
 - 우승자를 CarList에서 findWinners()를 호출해서 우승자를 출력해주는데, Car 객체를 관리하는 클래스인 CarList에서 우승자를 알려주는 로직을 가지고 있는게 맞을까? <br> <br>
   &rarr; CarList의 findWinners() 함수의 함수명만 findCarsWithMaxPostion()으로 변경하자!
+
+## 패키지 구조
+```
+src/main/java/racingcar
+├── Application.java
+├── controller
+│   └── RacingCarController.java
+├── dto
+│   ├── GameInitDto.java
+│   └── GameResultDto.java
+├── model
+│   ├── Race.java
+│   ├── car
+│   │   ├── Car.java
+│   │   └── CarList.java
+│   └── parser
+│       ├── InputParser.java
+│       └── validator
+│           └── InputParserValidator.java
+└── view
+    ├── InputView.java
+    └── OutputView.java
+```
