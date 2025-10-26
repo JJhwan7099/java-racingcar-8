@@ -32,7 +32,7 @@ public class Race {
         for (int i = 0; i < gameCount; i++) {
             playRound();
         }
-        List<Car> winners = carList.findWinners();
+        List<Car> winners = carList.findCarsWithMaxPosition();
         outputView.printWinners(winners);
     }
 

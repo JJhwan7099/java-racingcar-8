@@ -14,7 +14,7 @@ public class CarList {
         return cars;
     }
 
-    public List<Car> findWinners() {
+    public List<Car> findCarsWithMaxPosition() {
         int maxPosition = 0;
         for (Car car : cars) {
             if (car.getPosition() > maxPosition) {
