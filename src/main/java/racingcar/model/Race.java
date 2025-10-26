@@ -43,9 +43,9 @@ public class Race {
 
     private GameResultDto.RoundResult playRound() {
         List<Car> cars = carList.getCars();
-        for(Car car : cars) {
-            int randomNumber = Randoms.pickNumberInRange(MIN_RANGE,MAX_RANGE);
-            if(randomNumber >= WIN_THRESHOLD) car.moveForward();
+        for (Car car : cars) {
+            int randomNumber = Randoms.pickNumberInRange(MIN_RANGE, MAX_RANGE);
+            if (randomNumber >= WIN_THRESHOLD) car.moveForward();
         }
         return new GameResultDto.RoundResult(cars);
     }

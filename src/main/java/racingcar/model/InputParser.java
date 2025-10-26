@@ -14,10 +14,10 @@ public class InputParser {
         InputParserValidator.validateCarNames(cars);
 
         int parsedGameCount;
-        try{
+        try {
             parsedGameCount = Integer.parseInt(gameCount);
             InputParserValidator.validateGameCount(parsedGameCount);
-        } catch(NumberFormatException e) {
+        } catch (NumberFormatException e) {
             throw new IllegalArgumentException("게임 횟수는 1이상의 정수입니다.");
         }
 

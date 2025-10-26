@@ -23,7 +23,7 @@ public class CarList {
         }
 
         List<Car> winners = new ArrayList<>();
-        for(Car car : cars) {
+        for (Car car : cars) {
             if (car.getPosition() == maxPosition) {
                 winners.add(car);
             }

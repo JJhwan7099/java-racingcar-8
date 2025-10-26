@@ -14,7 +14,7 @@ public class RacingCarController {
     private final InputParser inputParser;
     private final CarList carList;
 
-    public RacingCarController(InputView inputView, OutputView outputView,InputParser inputParser, CarList carList) {
+    public RacingCarController(InputView inputView, OutputView outputView, InputParser inputParser, CarList carList) {
         this.inputView = inputView;
         this.outputView = outputView;
         this.inputParser = inputParser;
