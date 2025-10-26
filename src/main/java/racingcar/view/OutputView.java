@@ -25,11 +25,7 @@ public class OutputView {
                 String carName = carNameAndPosition.getName();
                 int position = carNameAndPosition.getPosition();
 
-                System.out.print(carName + " : ");
-                for (int i = 0; i < position; i++) {
-                    System.out.print("-");
-                }
-                System.out.println();
+                System.out.println(carName + " : " + "-".repeat(position));
             }
 
             System.out.println();
