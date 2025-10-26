@@ -2,20 +2,18 @@ package racingcar.model;
 
 import camp.nextstep.edu.missionutils.Randoms;
 import racingcar.dto.GameInitDto;
+import racingcar.dto.GameResultDto;
 import racingcar.model.car.Car;
 import racingcar.model.car.CarList;
-import racingcar.view.OutputView;
 
 import java.util.List;
 
 public class Race {
     private final CarList carList;
-    private final OutputView outputView;
     private final int gameCount;
 
-    public Race(CarList carList, GameInitDto gameInitDto, OutputView outputView) {
+    public Race(CarList carList, GameInitDto gameInitDto) {
         this.carList = carList;
-        this.outputView = outputView;
         this.gameCount = gameInitDto.getGameCount();
         registerCars(gameInitDto.getCarNames());
     }
@@ -27,21 +25,23 @@ public class Race {
         }
     }
 
-    public void startGame() {
-        outputView.printRacingResult();
+    public GameResultDto startGame() {
+        GameResultDto gameResultDto = new GameResultDto();
+
         for (int i = 0; i < gameCount; i++) {
-            playRound();
+            gameResultDto.addRoundResult(playRound());
         }
-        List<Car> winners = carList.findCarsWithMaxPosition();
-        outputView.printWinners(winners);
+        gameResultDto.addWinners(carList.findCarsWithMaxPosition());
+
+        return gameResultDto;
     }
 
-    private void playRound() {
+    private GameResultDto.RoundResult playRound() {
         List<Car> cars = carList.getCars();
         for(Car car : cars) {
             int randomNumber = Randoms.pickNumberInRange(0,9);
             if(randomNumber >=4) car.moveForward();
         }
-        outputView.printRoundStatus(cars);
+        return new GameResultDto.RoundResult(cars);
     }
 }
