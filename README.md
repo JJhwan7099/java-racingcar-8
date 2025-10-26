@@ -123,8 +123,8 @@ jun : -----
   - InputParserValidator를 구현하고 내부에서 검증하기. 문자열을 쉼표(,)기준으로 분할하는 것은 InputParser에서 수행하고 분리된 값을 InputParserValidator 클래스에서 검증하고 예외를 던지면 된다. 하지만, 게임횟수 입력값에 대한 검증은 **"정수로 변환하는 경우, 변환한 정수가 1이상인지 확인하는 경우"** 2가지를 검증해야하는데 변환한 정수값에 대한 검증은 문제가 없으나 정수로 변활할때 발생하는 NumberFormatException을 잡기위해서는 정수를 변환하는 과정또한 InputParserValidator에 있어야한다. <br> <br>
    &rarr; 역할을 철저하게 분리하지 못하는 상황도 있으니 쉼표(,)기준 분리된 값들 검증, 게임횟수 입력값이 1이상인지 검증은 InputParserValidator에서 수행하고 게임횟수 입력값을 정수로 변환하는 상황에서는 예외적으로 InputParser 내부에서 try-catch 문을 이용하여 잡아보자.
 
-- Race 클래스에서 자동차 경주 라운드를 진행하고 라운드 마다 OutputView를 통해 출력을 하고있는데, 출력을 Race 클래스에서 제어하는건 SRP를 위반하는 것이 아닐까?
-  &rarr; (아직 고려중)
+- Race 클래스에서 자동차 경주 라운드를 진행하고 라운드 마다 OutputView를 통해 출력을 하고있는데, 출력을 Race 클래스에서 제어하는건 SRP를 위반하는 것이 아닐까? <br> <br>
+  &rarr; (결론) Race에서 View를 제어하지 않을 수 있도록 Race 클래스에서 라운드별 경기 결과와 최종 우승자와 같은 출력해야할 데이터를 dto로 감싸서 RacingCarController로 반환하자!
 
 - 우승자를 CarList에서 findWinners()를 호출해서 우승자를 출력해주는데, Car 객체를 관리하는 클래스인 CarList에서 우승자를 알려주는 로직을 가지고 있는게 맞을까? <br> <br>
   &rarr; CarList의 findWinners() 함수의 함수명만 findCarsWithMaxPostion()으로 변경하자!
