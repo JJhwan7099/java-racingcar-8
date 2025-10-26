@@ -1,6 +1,7 @@
 package racingcar.controller;
 
 import racingcar.dto.GameInitDto;
+import racingcar.dto.GameResultDto;
 import racingcar.model.InputParser;
 import racingcar.model.Race;
 import racingcar.model.car.CarList;
@@ -28,7 +29,9 @@ public class RacingCarController {
 
         GameInitDto gameInitDto = inputParser.parseInput(carNames, gameCount);
 
-        Race race = new Race(carList, gameInitDto, outputView);
-        race.startGame();
+        Race race = new Race(carList, gameInitDto);
+        GameResultDto gameResultDto = race.startGame();
+
+        outputView.printResult(gameResultDto);
     }
 }
