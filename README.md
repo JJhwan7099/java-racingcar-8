@@ -140,6 +140,7 @@ jun : -----
 
 - OutputView 클래스에 대한 단위 테스트를 진행할때 콘솔창에 출력된 내용을 어떻게 테스트하지?
   &rarr; ByteArrayOutputStream.toString()을 이용해보자!
+  - 시스템의 출력을 ByteArrayOutputStream으로 설정을 해주는 원리.
 
 ## 패키지 구조
 ```
