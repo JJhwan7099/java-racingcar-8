@@ -183,6 +183,7 @@ src/main/java/racingcar
 - Car
   - [x] moveForward() 동작 확인
   - [x] getPosition() 동작 확인
+  - [x] 생성된 Car 객체가 이름과 초기위치를 가지고 있는지 확인
 - CarList
   - [ ] 자동차 등록(register()) 및 반환(getCars()) 동작 확인
   - [ ] findCarsWithMaxPosition() 동작 확인
