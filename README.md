@@ -201,3 +201,7 @@ src/main/java/racingcar
 - OutputView
   - [x] 라운드별 출력 정상동작 확인 ex) "pobi : --"
   - [x] 우승자 출력 형식 검증
+- Race
+  - [ ] registerCars() 동작 확인
+  - [ ] startGame()이 게임 횟수만큼 라운드를 수행하는지 확인
+  - [ ] 랜덤값에 따라 moveForward()를 정확히 호출하는지 확인
