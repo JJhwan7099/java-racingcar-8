@@ -175,3 +175,24 @@ src/main/java/racingcar
 | **GameResultDto**        | 게임 결과(라운드별 이동 내역, 최종 우승자)를 View에 전달하기 위한 데이터 구조        |
 | **InputView**            | 사용자 입력을 받는 역할                                          |
 | **OutputView**           | 실행 결과, 우승자 등을 콘솔에 출력하는 역할                              |
+
+## 단위 테스트
+
+---
+
+- Car
+  - [ ] moveForward() 동작 확인
+  - [ ] getPosition() 동작 확인
+  - [ ] 자동차 이름 유효성 검사
+- CarList
+  - [ ] 자동차 등록(register()) 및 반환(getCars()) 동작 확인
+  - [ ] findCarsWithMaxPosition() 동작 확인
+- InputParser / InputParserValidator
+  - [ ] 게임 참가 자동차명 입력값 파싱 동작 확인
+  - [ ] 입력 유효성 검사
+- GameResultDto
+  - [ ] 라운드 결과 추가 후 저장 확인
+  - [ ] 우승자 이름 저장 확인
+- OutputView
+  - [ ] 라운드별 출력 정상동작 확인 ex) "pobi : --"
+  - [ ] 우승자 출력 형식 검증
