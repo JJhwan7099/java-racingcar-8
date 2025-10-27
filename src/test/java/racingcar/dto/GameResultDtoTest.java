@@ -17,7 +17,7 @@ public class GameResultDtoTest {
         carA.moveForward();
 
         GameResultDto gameResultDto = new GameResultDto();
-        GameResultDto.RoundResult roundResult = new GameResultDto.RoundResult(List.of(carA,carB));
+        GameResultDto.RoundResult roundResult = new GameResultDto.RoundResult(List.of(carA, carB));
 
         //when
         gameResultDto.addRoundResult(roundResult);
@@ -62,10 +62,10 @@ public class GameResultDtoTest {
         GameResultDto gameResultDto = new GameResultDto();
 
         //when
-        gameResultDto.addWinners(List.of(carA,carB));
+        gameResultDto.addWinners(List.of(carA, carB));
 
         //then
         assertThat(gameResultDto.getWinners()).hasSize(2);
-        assertThat(gameResultDto.getWinners()).containsExactly("carA","carB");
+        assertThat(gameResultDto.getWinners()).containsExactly("carA", "carB");
     }
 }

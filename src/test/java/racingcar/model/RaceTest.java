@@ -26,23 +26,23 @@ public class RaceTest {
     @Test
     void 자동차_등록_정상작동() {
         //given
-        GameInitDto gameInitDto = new GameInitDto(List.of("carA","carB"),3);
+        GameInitDto gameInitDto = new GameInitDto(List.of("carA", "carB"), 3);
 
         //when
-        Race race = new Race(carList,gameInitDto);
+        Race race = new Race(carList, gameInitDto);
 
         //then
         assertThat(carList.getCars()).hasSize(2);
         assertThat(carList.getCars())
                 .extracting(Car::getName)
-                .containsExactly("carA","carB");
+                .containsExactly("carA", "carB");
     }
 
     @Test
     void 게임횟수만큼_라운드가_진행_정상작동() {
         //given
-        GameInitDto gameInitDto = new GameInitDto(List.of("carA","carB"),3);
-        Race race = new Race(carList,gameInitDto);
+        GameInitDto gameInitDto = new GameInitDto(List.of("carA", "carB"), 3);
+        Race race = new Race(carList, gameInitDto);
 
         //when
         assertRandomNumberInRangeTest(
@@ -59,8 +59,8 @@ public class RaceTest {
     @Test
     void 랜덤값이_기준값이상이면_자동차가_이동한다() {
         //given
-        GameInitDto gameInitDto = new GameInitDto(List.of("carA","carB"),3);
-        Race race = new Race(carList,gameInitDto);
+        GameInitDto gameInitDto = new GameInitDto(List.of("carA", "carB"), 3);
+        Race race = new Race(carList, gameInitDto);
 
         //when
         assertRandomNumberInRangeTest(

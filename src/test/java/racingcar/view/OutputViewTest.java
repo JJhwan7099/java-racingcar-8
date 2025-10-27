@@ -33,7 +33,7 @@ public class OutputViewTest {
         carA.moveForward();
         carB.moveForward();
 
-        GameResultDto.RoundResult roundResult = new GameResultDto.RoundResult(List.of(carA,carB));
+        GameResultDto.RoundResult roundResult = new GameResultDto.RoundResult(List.of(carA, carB));
         GameResultDto gameResultDto = new GameResultDto();
         gameResultDto.addRoundResult(roundResult);
 
@@ -55,7 +55,7 @@ public class OutputViewTest {
         Car carB = new Car("carB");
 
         GameResultDto gameResultDto = new GameResultDto();
-        gameResultDto.addWinners(List.of(carA,carB));
+        gameResultDto.addWinners(List.of(carA, carB));
 
         //when
         outputView.printResult(gameResultDto);
