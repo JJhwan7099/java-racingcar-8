@@ -138,6 +138,9 @@ jun : -----
 - 우승자를 CarList에서 findWinners()를 호출해서 우승자를 출력해주는데, Car 객체를 관리하는 클래스인 CarList에서 우승자를 알려주는 로직을 가지고 있는게 맞을까? <br> <br>
   &rarr; CarList의 findWinners() 함수의 함수명만 findCarsWithMaxPostion()으로 변경하자!
 
+- OutputView 클래스에 대한 단위 테스트를 진행할때 콘솔창에 출력된 내용을 어떻게 테스트하지?
+  &rarr; ByteArrayOutputStream.toString()을 이용해보자!
+
 ## 패키지 구조
 ```
 src/main/java/racingcar
