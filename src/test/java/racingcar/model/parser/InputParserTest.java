@@ -3,8 +3,10 @@ package racingcar.model.parser;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import racingcar.dto.GameInitDto;
+import racingcar.model.parser.validator.InputParserValidator;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class InputParserTest {
 
@@ -24,5 +26,11 @@ public class InputParserTest {
 
         assertThat(gameInitDto.getCarNames()).containsExactly("carA", "carB", "carC");
         assertThat(gameInitDto.getGameCount()).isEqualTo(5);
+    }
+
+    @Test
+    void 게임횟수_입력값이_정수형태가_아닐때_예외발생() {
+        assertThrows(IllegalArgumentException.class,
+                () -> inputParser.parseInput("carA,carB,carC", "a"));
     }
 }
