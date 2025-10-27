@@ -188,7 +188,8 @@ src/main/java/racingcar
   - [x] 자동차 등록(register()) 및 반환(getCars()) 동작 확인
   - [x] findCarsWithMaxPosition() 동작 확인
 - InputParser / InputParserValidator
-  - [ ] 게임 참가 자동차명 입력값 파싱 동작 확인
+  - [x] 게임 참가 자동차명 입력값 파싱 동작 확인
+  - [x] 자동차명 입력값 앞뒤 공백 자동제거 동작 확인
   - [ ] 입력 유효성 검사
 - GameResultDto
   - [ ] 라운드 결과 추가 후 저장 확인
