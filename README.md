@@ -190,7 +190,7 @@ src/main/java/racingcar
 - InputParser / InputParserValidator
   - [x] 게임 참가 자동차명 입력값 파싱 동작 확인
   - [x] 자동차명 입력값 앞뒤 공백 자동제거 동작 확인
-  - [ ] 입력 유효성 검사
+  - [x] 입력 유효성 검사
 - GameResultDto
   - [ ] 라운드 결과 추가 후 저장 확인
   - [ ] 우승자 이름 저장 확인
